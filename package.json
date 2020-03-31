@@ -1,0 +1,14 @@
+{
+  "name": "webpack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Yuji1113/test_repo.git",
+  "author": "syu <yuji1113@live.jp>",
+  "license": "UNLINCENSED",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "4.41.6",
+    "webpack-cli": "3.3.11"
+  }
+}
