@@ -23,6 +23,18 @@ module.exports = {
           },
         ]
       },
+      {
+        test: /\.(png|jpe?g|svg)/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              esModule: false,
+              name: 'images/[name].[ext]'
+            }
+          },
+        ]
+      },
     ]
   },
   plugins: [
