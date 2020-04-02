@@ -21,6 +21,16 @@ module.exports = {
   },
   module: {
     rules: [
+      //Typescript
+      {
+        test: /\.(ts|tsx)/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'ts-loader',
+          },
+        ]
+      },
       //JS
       {
         test: /\.js/,

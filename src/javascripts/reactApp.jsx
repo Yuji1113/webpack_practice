@@ -1,10 +1,13 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 
+import Alert from './Alert.tsx'
+
 const App = (props) => {
   return (
     <div style={{ color: '#000' }}>
       Hello, React App.
+      <Alert message="success" />
     </div>
   );
 }
