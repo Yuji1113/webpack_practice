@@ -1,0 +1,38 @@
+@import './footer.scss';
+
+
+@mixin set-margin($direcsion, $value){
+  margin-#{$direcsion}: $value;
+}
+
+$primary-color: green;
+$text-color: red;
+
+
+h1{
+  @include set-margin("top",60px);
+  color: $primary-color;
+}
+
+a{
+  &:hover{
+    color: $text-color;
+  }
+  &:visited{
+    color: $text-color;
+  }
+}
+
+.content{
+  .title{
+    font-size: 24px;
+    color: $text-color;
+    background-color: red;
+    padding: 3px;
+    margin: 10px 0 0;
+  }
+  .title-lg{
+    @extend .title;
+    font-size: 32px;
+  }
+}
