@@ -5,13 +5,19 @@
   margin-#{$direcsion}: $value;
 }
 
-$primary-color: green;
+//カラー変数
+$primary-color: rgba(#0fab53,0.8);
 $text-color: red;
 
 
 h1{
   @include set-margin("top",60px);
   color: $primary-color;
+  transition: all 400ms;
+
+  &:hover{
+    transform: translateX(50px);
+  }
 }
 
 a{
@@ -27,12 +33,20 @@ a{
   .title{
     font-size: 24px;
     color: $text-color;
-    background-color: red;
+    background-color: #f30;
     padding: 3px;
     margin: 10px 0 0;
   }
   .title-lg{
     @extend .title;
     font-size: 32px;
+  }
+
+  .lead{
+    margin: 10px 0 0;
+    font-size: 24px;
+    padding: 3px;
+    color: $text-color;
+    background-color: red;
   }
 }
