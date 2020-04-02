@@ -18,6 +18,22 @@ module.exports = {
   },
   module: {
     rules: [
+      //JS
+      {
+        test: /\.js/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                ['@babel/preset-env', { "targets": "> 0.25%, not dead" }],
+              ],
+            },
+          },
+        ]
+      },
+      //CSS
       {
         test: /\.(css|sass|scss)/,
         use:[
@@ -31,7 +47,7 @@ module.exports = {
               // オプションでCSS内のurl()メソッドを取り込む
               // url: true,
               // ソースマップの利用有無
-              sourceMap: enabledSourceMap,
+              // sourceMap: enabledSourceMap,
 
               // 0 => no loaders (default);
               // 1 => postcss-loader;
@@ -44,7 +60,7 @@ module.exports = {
             loader: "postcss-loader",
             options: {
               // PostCSS側でもソースマップを有効にする
-              sourceMap: enabledSourceMap,
+              // sourceMap: enabledSourceMap,
 
               plugins: [
                 //CSS　圧縮
@@ -76,11 +92,12 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               // ソースマップの利用有無
-              sourceMap: enabledSourceMap
+              // sourceMap: enabledSourceMap
             }
           },
         ]
       },
+      //IMAGE
       {
         test: /\.(png|jpe?g|svg)/,
         use: [
@@ -93,6 +110,7 @@ module.exports = {
           },
         ]
       },
+      //PUG
       {
         test: /\.pug/,
         use: [
