@@ -11,6 +11,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
+  mode: 'development',
+  // mode: 'production',
+  devtool: 'source-map',
   entry: './src/javascripts/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -47,7 +50,7 @@ module.exports = {
               // オプションでCSS内のurl()メソッドを取り込む
               // url: true,
               // ソースマップの利用有無
-              // sourceMap: enabledSourceMap,
+              sourceMap: enabledSourceMap,
 
               // 0 => no loaders (default);
               // 1 => postcss-loader;
@@ -60,7 +63,7 @@ module.exports = {
             loader: "postcss-loader",
             options: {
               // PostCSS側でもソースマップを有効にする
-              // sourceMap: enabledSourceMap,
+              sourceMap: enabledSourceMap,
 
               plugins: [
                 //CSS　圧縮
@@ -92,7 +95,7 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               // ソースマップの利用有無
-              // sourceMap: enabledSourceMap
+              sourceMap: enabledSourceMap
             }
           },
         ]
@@ -106,6 +109,15 @@ module.exports = {
             options: {
               esModule: false,
               name: 'images/[name].[ext]'
+            }
+          },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                progressive: true,
+                // quality: 65
+              },
             }
           },
         ]
