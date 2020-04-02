@@ -31,6 +31,7 @@ module.exports = {
             options: {
               presets: [
                 ['@babel/preset-env', { "targets": "> 0.25%, not dead" }],
+                '@babel/preset-react',
               ],
             },
           },
@@ -111,15 +112,15 @@ module.exports = {
               name: 'images/[name].[ext]'
             }
           },
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              mozjpeg: {
-                progressive: true,
-                // quality: 65
-              },
-            }
-          },
+          // {
+          //   loader: 'image-webpack-loader',
+          //   options: {
+          //     mozjpeg: {
+          //       progressive: true,
+          //       // quality: 65
+          //     },
+          //   }
+          // },
         ]
       },
       //PUG
